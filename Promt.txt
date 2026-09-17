@@ -1,0 +1,22 @@
+AI Patient Follow-Up Assistant
+Problem Statement: Hospitals miss follow-up communication.
+Learners Can Create
+    • Synthetic-patient follow-up data
+Al Features
+    • Personalized reminders
+    • Follow-up summaries
+Agents
+    • Patient Summary Agent
+    • Reminder Agent
+    • Escalation Agent
+Workflow
+    Sequential workflow with memory.
+
+
+Tasks Involved:
+1.Documentation
+2.Frontend development : Open Web UI (docker pull openwebui/open-webui)
+3.Agents development : Develop similar to routerbasedagenticworkflowhealthcare.py
+4.AWS Deployment : refer /Users/manikiransannapu/AI Progect/ollama-FAPI/k8s
+
+Anthropic (Claude) API Key: stored in .env (ANTHROPIC_API_KEY) — not committed to source control.
