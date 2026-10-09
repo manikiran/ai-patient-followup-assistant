@@ -1,0 +1,86 @@
+{
+  "patient_id": "P0022",
+  "scenario": "non_responder",
+  "demographics": {
+    "name": "Natalie Lambert",
+    "age": 54,
+    "gender": "female",
+    "phone": "(861)659-5148x465",
+    "email": "jamesortega@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-22",
+    "diagnosis": "Total knee replacement",
+    "summary": "Elective right knee replacement; mobilising with a frame, wound clean and dry at discharge.",
+    "warning_signs": [
+      "wound redness or discharge",
+      "calf swelling",
+      "fever above 38.5 C"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Apixaban",
+      "dose": "2.5 mg",
+      "frequency": "twice daily for 14 days",
+      "change": "new"
+    },
+    {
+      "name": "Oxycodone",
+      "dose": "5 mg",
+      "frequency": "as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0022-A3",
+      "type": "Post-op wound check",
+      "date": "2026-10-13",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0022-A2",
+      "type": "Medication review",
+      "date": "2026-10-14",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0022-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-22",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-24",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Feeling better, see you then."
+    },
+    {
+      "date": "2026-09-26",
+      "channel": "sms",
+      "status": "no_response",
+      "message": ""
+    },
+    {
+      "date": "2026-09-28",
+      "channel": "sms",
+      "status": "no_response",
+      "message": ""
+    },
+    {
+      "date": "2026-09-30",
+      "channel": "sms",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

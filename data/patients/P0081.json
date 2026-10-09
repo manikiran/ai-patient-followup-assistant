@@ -1,0 +1,68 @@
+{
+  "patient_id": "P0081",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Jose Allen",
+    "age": 34,
+    "gender": "female",
+    "phone": "(446)309-5396",
+    "email": "carlos88@hotmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-19",
+    "diagnosis": "Type 2 diabetes with hyperglycemia",
+    "summary": "Admitted with blood glucose above 400 mg/dL; insulin started and diabetes education provided.",
+    "warning_signs": [
+      "confusion",
+      "blood sugar above 300",
+      "fainting"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Insulin glargine",
+      "dose": "18 units",
+      "frequency": "at bedtime",
+      "change": "new"
+    },
+    {
+      "name": "Metformin",
+      "dose": "1000 mg",
+      "frequency": "twice daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0081-A2",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-16",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0081-A3",
+      "type": "Post-op wound check",
+      "date": "2026-10-17",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0081-A1",
+      "type": "Physical therapy session",
+      "date": "2026-10-22",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-21",
+      "channel": "phone",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

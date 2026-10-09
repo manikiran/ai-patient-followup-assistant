@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0033",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Jack Snow",
+    "age": 65,
+    "gender": "non-binary",
+    "phone": "626.728.4987x769",
+    "email": "mariahmiller@yahoo.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-22",
+    "diagnosis": "Total knee replacement",
+    "summary": "Elective right knee replacement; mobilising with a frame, wound clean and dry at discharge.",
+    "warning_signs": [
+      "wound redness or discharge",
+      "calf swelling",
+      "fever above 38.5 C"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Apixaban",
+      "dose": "2.5 mg",
+      "frequency": "twice daily for 14 days",
+      "change": "new"
+    },
+    {
+      "name": "Oxycodone",
+      "dose": "5 mg",
+      "frequency": "as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0033-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-16",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-24",
+      "channel": "email",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0091",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Kelly Torres",
+    "age": 71,
+    "gender": "non-binary",
+    "phone": "(653)458-4143",
+    "email": "christina18@hotmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-17",
+    "diagnosis": "Type 2 diabetes with hyperglycemia",
+    "summary": "Admitted with blood glucose above 400 mg/dL; insulin started and diabetes education provided.",
+    "warning_signs": [
+      "confusion",
+      "blood sugar above 300",
+      "fainting"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Insulin glargine",
+      "dose": "18 units",
+      "frequency": "at bedtime",
+      "change": "new"
+    },
+    {
+      "name": "Metformin",
+      "dose": "1000 mg",
+      "frequency": "twice daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0091-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-09",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-19",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    }
+  ]
+}

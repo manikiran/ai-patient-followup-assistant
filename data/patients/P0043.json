@@ -1,0 +1,68 @@
+{
+  "patient_id": "P0043",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Shannon Rivera",
+    "age": 38,
+    "gender": "male",
+    "phone": "001-874-268-0715x451",
+    "email": "mgutierrez@hotmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-29",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0043-A3",
+      "type": "Primary care visit",
+      "date": "2026-10-07",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0043-A2",
+      "type": "Physical therapy session",
+      "date": "2026-10-17",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0043-A1",
+      "type": "Medication review",
+      "date": "2026-10-23",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-10-01",
+      "channel": "email",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    }
+  ]
+}

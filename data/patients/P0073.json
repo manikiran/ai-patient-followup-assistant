@@ -1,0 +1,80 @@
+{
+  "patient_id": "P0073",
+  "scenario": "warning_symptom",
+  "demographics": {
+    "name": "Robert Monroe",
+    "age": 61,
+    "gender": "female",
+    "phone": "001-718-720-3778x892",
+    "email": "paul59@gmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-28",
+    "diagnosis": "Acute kidney injury",
+    "summary": "Dehydration-related kidney injury, creatinine improving; nephrotoxic medicines paused.",
+    "warning_signs": [
+      "passing very little urine",
+      "swelling of legs",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Ibuprofen",
+      "dose": "400 mg",
+      "frequency": "as needed",
+      "change": "stopped"
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0073-A3",
+      "type": "Physical therapy session",
+      "date": "2026-10-08",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0073-A1",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-22",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0073-A2",
+      "type": "Medication review",
+      "date": "2026-10-24",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-30",
+      "channel": "email",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    },
+    {
+      "date": "2026-10-02",
+      "channel": "email",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-10-04",
+      "channel": "email",
+      "status": "responded",
+      "message": "I'll try to come, but I've had confusion since yesterday."
+    }
+  ]
+}

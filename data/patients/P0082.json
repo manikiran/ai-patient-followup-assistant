@@ -1,0 +1,67 @@
+{
+  "patient_id": "P0082",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Katie Smith",
+    "age": 72,
+    "gender": "non-binary",
+    "phone": "406.254.0515x3195",
+    "email": "amy27@hotmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-18",
+    "diagnosis": "Total knee replacement",
+    "summary": "Elective right knee replacement; mobilising with a frame, wound clean and dry at discharge.",
+    "warning_signs": [
+      "wound redness or discharge",
+      "calf swelling",
+      "fever above 38.5 C"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Apixaban",
+      "dose": "2.5 mg",
+      "frequency": "twice daily for 14 days",
+      "change": "new"
+    },
+    {
+      "name": "Oxycodone",
+      "dose": "5 mg",
+      "frequency": "as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0082-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-07",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0082-A2",
+      "type": "Medication review",
+      "date": "2026-10-15",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-20",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    },
+    {
+      "date": "2026-09-22",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    }
+  ]
+}

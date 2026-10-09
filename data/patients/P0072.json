@@ -1,0 +1,48 @@
+{
+  "patient_id": "P0072",
+  "scenario": "missed_critical",
+  "demographics": {
+    "name": "Angela Lin",
+    "age": 58,
+    "gender": "male",
+    "phone": "999-586-7980",
+    "email": "cassidy82@gmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-30",
+    "diagnosis": "Laparoscopic appendectomy",
+    "summary": "Uncomplicated appendectomy; tolerating diet and pain controlled with oral analgesia.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "worsening abdominal pain",
+      "wound redness or discharge"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Paracetamol",
+      "dose": "1 g",
+      "frequency": "four times daily as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0072-A9",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-01",
+      "critical": true,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0072-A1",
+      "type": "Medication review",
+      "date": "2026-10-11",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

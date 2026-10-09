@@ -1,0 +1,80 @@
+{
+  "patient_id": "P0018",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Melissa Hernandez",
+    "age": 67,
+    "gender": "female",
+    "phone": "7592826204",
+    "email": "jason31@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-20",
+    "diagnosis": "Total knee replacement",
+    "summary": "Elective right knee replacement; mobilising with a frame, wound clean and dry at discharge.",
+    "warning_signs": [
+      "wound redness or discharge",
+      "calf swelling",
+      "fever above 38.5 C"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Apixaban",
+      "dose": "2.5 mg",
+      "frequency": "twice daily for 14 days",
+      "change": "new"
+    },
+    {
+      "name": "Oxycodone",
+      "dose": "5 mg",
+      "frequency": "as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0018-A2",
+      "type": "Physical therapy session",
+      "date": "2026-10-08",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0018-A3",
+      "type": "Medication review",
+      "date": "2026-10-09",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0018-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-15",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-22",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    },
+    {
+      "date": "2026-09-24",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Feeling better, see you then."
+    },
+    {
+      "date": "2026-09-26",
+      "channel": "sms",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

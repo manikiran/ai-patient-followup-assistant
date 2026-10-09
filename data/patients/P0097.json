@@ -1,0 +1,73 @@
+{
+  "patient_id": "P0097",
+  "scenario": "missed_critical",
+  "demographics": {
+    "name": "Joshua Bryan",
+    "age": 64,
+    "gender": "male",
+    "phone": "+1-891-221-6558x523",
+    "email": "williamsjennifer@yahoo.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-20",
+    "diagnosis": "Heart failure exacerbation",
+    "summary": "Admitted with shortness of breath and leg swelling; diuresed and discharged on adjusted diuretics.",
+    "warning_signs": [
+      "chest pain",
+      "shortness of breath",
+      "weight gain over 2 kg in 2 days"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Furosemide",
+      "dose": "40 mg",
+      "frequency": "once daily",
+      "change": "changed"
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "10 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    },
+    {
+      "name": "Metoprolol succinate",
+      "dose": "25 mg",
+      "frequency": "once daily",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0097-A9",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-02",
+      "critical": true,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0097-A1",
+      "type": "Medication review",
+      "date": "2026-10-18",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-22",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    },
+    {
+      "date": "2026-09-24",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    }
+  ]
+}

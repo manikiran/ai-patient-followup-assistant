@@ -1,8 +1,29 @@
-fastapi>=0.115.0
-uvicorn[standard]>=0.30.6
-pydantic>=2.9.2
+# Agents + LLM: Claude (default), or free alternatives Ollama / Gemini free tier
 langgraph>=0.2.34
 langchain-core>=0.3.10
-anthropic>=0.40.0
-python-dotenv>=1.0.1
+anthropic>=1.11.0
+langchain-ollama>=0.3.0
+langchain-google-genai>=2.1.0
+pydantic>=2.9.2
+
+# RAG
+langchain-text-splitters>=0.3.0
+langchain-chroma>=0.2.0
+chromadb>=0.5.0
+# FAISS fallback (VECTOR_STORE=faiss) is optional -- install on demand:
+#   pip install langchain-community faiss-cpu
+
+# Storage (S3, SSM Parameter Store)
+boto3>=1.35.0
+
+# Frontend
+streamlit>=1.48.0
+pandas>=2.2.0
+
+# Data
 Faker>=28.4.1
+jsonschema>=4.23.0
+python-dotenv>=1.0.1
+
+# Tests
+pytest>=8.3.0

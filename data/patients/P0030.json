@@ -1,0 +1,68 @@
+{
+  "patient_id": "P0030",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "James Lewis",
+    "age": 53,
+    "gender": "female",
+    "phone": "256-246-4170x80531",
+    "email": "jamessmith@gmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-24",
+    "diagnosis": "Acute kidney injury",
+    "summary": "Dehydration-related kidney injury, creatinine improving; nephrotoxic medicines paused.",
+    "warning_signs": [
+      "passing very little urine",
+      "swelling of legs",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Ibuprofen",
+      "dose": "400 mg",
+      "frequency": "as needed",
+      "change": "stopped"
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0030-A9",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-03",
+      "critical": false,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0030-A3",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-07",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0030-A2",
+      "type": "Post-op wound check",
+      "date": "2026-10-11",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0030-A1",
+      "type": "Medication review",
+      "date": "2026-10-14",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

@@ -1,0 +1,66 @@
+{
+  "patient_id": "P0040",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Jason Norris",
+    "age": 39,
+    "gender": "non-binary",
+    "phone": "340.534.4713x4936",
+    "email": "rebekahserrano@gmail.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-29",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0040-A1",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-07",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-10-01",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-10-03",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-10-05",
+      "channel": "sms",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

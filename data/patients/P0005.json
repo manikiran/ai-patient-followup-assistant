@@ -1,0 +1,86 @@
+{
+  "patient_id": "P0005",
+  "scenario": "non_responder",
+  "demographics": {
+    "name": "Daniel Hahn",
+    "age": 53,
+    "gender": "female",
+    "phone": "001-653-876-7242x388",
+    "email": "icox@hotmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-24",
+    "diagnosis": "Acute kidney injury",
+    "summary": "Dehydration-related kidney injury, creatinine improving; nephrotoxic medicines paused.",
+    "warning_signs": [
+      "passing very little urine",
+      "swelling of legs",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Ibuprofen",
+      "dose": "400 mg",
+      "frequency": "as needed",
+      "change": "stopped"
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0005-A2",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-18",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0005-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-19",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0005-A3",
+      "type": "Physical therapy session",
+      "date": "2026-10-21",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-26",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    },
+    {
+      "date": "2026-09-28",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    },
+    {
+      "date": "2026-09-30",
+      "channel": "phone",
+      "status": "no_response",
+      "message": ""
+    },
+    {
+      "date": "2026-10-02",
+      "channel": "phone",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "patient_id": "P0048",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Evelyn Garcia",
+    "age": 76,
+    "gender": "non-binary",
+    "phone": "818.370.2621x745",
+    "email": "melissa86@yahoo.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-15",
+    "diagnosis": "Laparoscopic appendectomy",
+    "summary": "Uncomplicated appendectomy; tolerating diet and pain controlled with oral analgesia.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "worsening abdominal pain",
+      "wound redness or discharge"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Paracetamol",
+      "dose": "1 g",
+      "frequency": "four times daily as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0048-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-16",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

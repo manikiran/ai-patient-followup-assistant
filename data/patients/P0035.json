@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0035",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Cynthia Alvarez",
+    "age": 73,
+    "gender": "male",
+    "phone": "001-977-701-4363x495",
+    "email": "jbarajas@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-17",
+    "diagnosis": "Laparoscopic appendectomy",
+    "summary": "Uncomplicated appendectomy; tolerating diet and pain controlled with oral analgesia.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "worsening abdominal pain",
+      "wound redness or discharge"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Paracetamol",
+      "dose": "1 g",
+      "frequency": "four times daily as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0035-A1",
+      "type": "Medication review",
+      "date": "2026-10-19",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-19",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    },
+    {
+      "date": "2026-09-21",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Picked up the new prescription, thanks."
+    }
+  ]
+}

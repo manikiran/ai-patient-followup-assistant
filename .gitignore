@@ -4,3 +4,12 @@ __pycache__/
 venv/
 .DS_Store
 .env
+.idea/
+.pytest_cache/
+
+# Generated at runtime -- in S3 when deployed
+vectorstore/
+.cache/
+data/memory/
+data/logs/
+data/vectorstore/

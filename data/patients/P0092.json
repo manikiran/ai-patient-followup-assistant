@@ -1,0 +1,66 @@
+{
+  "patient_id": "P0092",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Todd Moore",
+    "age": 28,
+    "gender": "female",
+    "phone": "+1-299-959-0010x94396",
+    "email": "dawn47@gmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-16",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0092-A1",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-08",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-18",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Picked up the new prescription, thanks."
+    },
+    {
+      "date": "2026-09-20",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Feeling better, see you then."
+    },
+    {
+      "date": "2026-09-22",
+      "channel": "phone",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0009",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Tanya Campos",
+    "age": 79,
+    "gender": "female",
+    "phone": "001-734-265-7871x331",
+    "email": "briannasmith@hotmail.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-27",
+    "diagnosis": "Ischaemic stroke (minor)",
+    "summary": "Minor stroke with resolving left arm weakness; started on secondary prevention.",
+    "warning_signs": [
+      "new weakness or numbness",
+      "slurred speech",
+      "severe headache"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": "75 mg",
+      "frequency": "once daily",
+      "change": "new"
+    },
+    {
+      "name": "Atorvastatin",
+      "dose": "80 mg",
+      "frequency": "at night",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0009-A1",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-24",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-29",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0006",
+  "scenario": "non_responder",
+  "demographics": {
+    "name": "Peter Callahan Jr.",
+    "age": 29,
+    "gender": "male",
+    "phone": "(669)216-6978",
+    "email": "maldonadoamanda@yahoo.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-30",
+    "diagnosis": "Ischaemic stroke (minor)",
+    "summary": "Minor stroke with resolving left arm weakness; started on secondary prevention.",
+    "warning_signs": [
+      "new weakness or numbness",
+      "slurred speech",
+      "severe headache"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": "75 mg",
+      "frequency": "once daily",
+      "change": "new"
+    },
+    {
+      "name": "Atorvastatin",
+      "dose": "80 mg",
+      "frequency": "at night",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0006-A1",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-07",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0006-A3",
+      "type": "Post-op wound check",
+      "date": "2026-10-08",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0006-A2",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-09",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-10-02",
+      "channel": "phone",
+      "status": "no_response",
+      "message": ""
+    },
+    {
+      "date": "2026-10-04",
+      "channel": "phone",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

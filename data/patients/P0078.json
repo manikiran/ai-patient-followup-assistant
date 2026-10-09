@@ -1,0 +1,68 @@
+{
+  "patient_id": "P0078",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Amy Castillo",
+    "age": 31,
+    "gender": "non-binary",
+    "phone": "(881)381-4124x782",
+    "email": "lisawilkerson@gmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-23",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0078-A2",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-07",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0078-A1",
+      "type": "Physical therapy session",
+      "date": "2026-10-16",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0078-A3",
+      "type": "Post-op wound check",
+      "date": "2026-10-19",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-25",
+      "channel": "email",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    }
+  ]
+}

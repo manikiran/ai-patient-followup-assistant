@@ -1,0 +1,55 @@
+{
+  "patient_id": "P0037",
+  "scenario": "warning_symptom",
+  "demographics": {
+    "name": "Eric Erickson",
+    "age": 28,
+    "gender": "male",
+    "phone": "(240)608-4271",
+    "email": "vmendoza@gmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-30",
+    "diagnosis": "Laparoscopic appendectomy",
+    "summary": "Uncomplicated appendectomy; tolerating diet and pain controlled with oral analgesia.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "worsening abdominal pain",
+      "wound redness or discharge"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Paracetamol",
+      "dose": "1 g",
+      "frequency": "four times daily as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0037-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-12",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0037-A2",
+      "type": "Medication review",
+      "date": "2026-10-21",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-10-02",
+      "channel": "email",
+      "status": "responded",
+      "message": "I'll try to come, but I've had wound redness or discharge since yesterday."
+    }
+  ]
+}

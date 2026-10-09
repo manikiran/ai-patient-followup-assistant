@@ -1,0 +1,55 @@
+{
+  "patient_id": "P0051",
+  "scenario": "routine",
+  "demographics": {
+    "name": "David Scott",
+    "age": 71,
+    "gender": "female",
+    "phone": "6748821759",
+    "email": "stephen43@yahoo.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-22",
+    "diagnosis": "Laparoscopic appendectomy",
+    "summary": "Uncomplicated appendectomy; tolerating diet and pain controlled with oral analgesia.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "worsening abdominal pain",
+      "wound redness or discharge"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Paracetamol",
+      "dose": "1 g",
+      "frequency": "four times daily as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0051-A1",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-10",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0051-A2",
+      "type": "Post-op wound check",
+      "date": "2026-10-13",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0051-A3",
+      "type": "Physical therapy session",
+      "date": "2026-10-16",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

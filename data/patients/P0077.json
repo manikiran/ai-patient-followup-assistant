@@ -1,0 +1,68 @@
+{
+  "patient_id": "P0077",
+  "scenario": "missed_critical",
+  "demographics": {
+    "name": "Cynthia Wallace",
+    "age": 74,
+    "gender": "male",
+    "phone": "873-883-4735x9774",
+    "email": "lisasolis@gmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-28",
+    "diagnosis": "Type 2 diabetes with hyperglycemia",
+    "summary": "Admitted with blood glucose above 400 mg/dL; insulin started and diabetes education provided.",
+    "warning_signs": [
+      "confusion",
+      "blood sugar above 300",
+      "fainting"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Insulin glargine",
+      "dose": "18 units",
+      "frequency": "at bedtime",
+      "change": "new"
+    },
+    {
+      "name": "Metformin",
+      "dose": "1000 mg",
+      "frequency": "twice daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0077-A9",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-03",
+      "critical": true,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0077-A2",
+      "type": "Physical therapy session",
+      "date": "2026-10-15",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0077-A1",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-20",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-30",
+      "channel": "email",
+      "status": "responded",
+      "message": "Feeling better, see you then."
+    }
+  ]
+}

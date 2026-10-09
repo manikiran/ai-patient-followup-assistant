@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0089",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Isaiah Walker",
+    "age": 39,
+    "gender": "non-binary",
+    "phone": "923.470.5895",
+    "email": "jonesraymond@hotmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-30",
+    "diagnosis": "Type 2 diabetes with hyperglycemia",
+    "summary": "Admitted with blood glucose above 400 mg/dL; insulin started and diabetes education provided.",
+    "warning_signs": [
+      "confusion",
+      "blood sugar above 300",
+      "fainting"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Insulin glargine",
+      "dose": "18 units",
+      "frequency": "at bedtime",
+      "change": "new"
+    },
+    {
+      "name": "Metformin",
+      "dose": "1000 mg",
+      "frequency": "twice daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0089-A1",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-24",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-10-02",
+      "channel": "email",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    }
+  ]
+}

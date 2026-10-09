@@ -1,0 +1,67 @@
+{
+  "patient_id": "P0036",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Jesse Parker",
+    "age": 59,
+    "gender": "male",
+    "phone": "913.651.8233",
+    "email": "tina34@gmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-19",
+    "diagnosis": "Heart failure exacerbation",
+    "summary": "Admitted with shortness of breath and leg swelling; diuresed and discharged on adjusted diuretics.",
+    "warning_signs": [
+      "chest pain",
+      "shortness of breath",
+      "weight gain over 2 kg in 2 days"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Furosemide",
+      "dose": "40 mg",
+      "frequency": "once daily",
+      "change": "changed"
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "10 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    },
+    {
+      "name": "Metoprolol succinate",
+      "dose": "25 mg",
+      "frequency": "once daily",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0036-A1",
+      "type": "Medication review",
+      "date": "2026-10-24",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0036-A2",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-26",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-21",
+      "channel": "email",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

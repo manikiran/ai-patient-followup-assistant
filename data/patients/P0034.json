@@ -1,0 +1,67 @@
+{
+  "patient_id": "P0034",
+  "scenario": "missed_critical",
+  "demographics": {
+    "name": "John Bishop",
+    "age": 77,
+    "gender": "male",
+    "phone": "(650)275-2735x4549",
+    "email": "christophercortez@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-26",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0034-A9",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-01",
+      "critical": true,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0034-A1",
+      "type": "Medication review",
+      "date": "2026-10-11",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-28",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-09-30",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    }
+  ]
+}

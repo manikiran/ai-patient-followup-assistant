@@ -1,0 +1,67 @@
+{
+  "patient_id": "P0004",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Henry Santiago",
+    "age": 46,
+    "gender": "male",
+    "phone": "001-719-228-3276x483",
+    "email": "lydiatrujillo@yahoo.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-28",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0004-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-11",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0004-A2",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-11",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-30",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    },
+    {
+      "date": "2026-10-02",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Picked up the new prescription, thanks."
+    }
+  ]
+}

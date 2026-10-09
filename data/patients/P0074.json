@@ -1,0 +1,61 @@
+{
+  "patient_id": "P0074",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Maria Jones",
+    "age": 66,
+    "gender": "female",
+    "phone": "486-744-9251",
+    "email": "tammy62@hotmail.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-17",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0074-A3",
+      "type": "Medication review",
+      "date": "2026-10-07",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0074-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-12",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0074-A2",
+      "type": "Primary care visit",
+      "date": "2026-10-16",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

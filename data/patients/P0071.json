@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0071",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Lori Lin",
+    "age": 81,
+    "gender": "female",
+    "phone": "+1-352-671-7744x9058",
+    "email": "dhayes@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-15",
+    "diagnosis": "Type 2 diabetes with hyperglycemia",
+    "summary": "Admitted with blood glucose above 400 mg/dL; insulin started and diabetes education provided.",
+    "warning_signs": [
+      "confusion",
+      "blood sugar above 300",
+      "fainting"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Insulin glargine",
+      "dose": "18 units",
+      "frequency": "at bedtime",
+      "change": "new"
+    },
+    {
+      "name": "Metformin",
+      "dose": "1000 mg",
+      "frequency": "twice daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0071-A1",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-25",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-17",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    }
+  ]
+}

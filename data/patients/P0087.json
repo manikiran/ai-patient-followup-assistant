@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0087",
+  "scenario": "missed_critical",
+  "demographics": {
+    "name": "Billy Taylor",
+    "age": 31,
+    "gender": "male",
+    "phone": "(365)643-1027x868",
+    "email": "jane39@yahoo.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-29",
+    "diagnosis": "Ischaemic stroke (minor)",
+    "summary": "Minor stroke with resolving left arm weakness; started on secondary prevention.",
+    "warning_signs": [
+      "new weakness or numbness",
+      "slurred speech",
+      "severe headache"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": "75 mg",
+      "frequency": "once daily",
+      "change": "new"
+    },
+    {
+      "name": "Atorvastatin",
+      "dose": "80 mg",
+      "frequency": "at night",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0087-A9",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-04",
+      "critical": true,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0087-A2",
+      "type": "Primary care visit",
+      "date": "2026-10-09",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0087-A1",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-21",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-10-01",
+      "channel": "email",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-10-03",
+      "channel": "email",
+      "status": "responded",
+      "message": "Picked up the new prescription, thanks."
+    }
+  ]
+}

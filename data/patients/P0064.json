@@ -1,0 +1,78 @@
+{
+  "patient_id": "P0064",
+  "scenario": "non_responder",
+  "demographics": {
+    "name": "John Boone",
+    "age": 81,
+    "gender": "female",
+    "phone": "(285)614-9368x998",
+    "email": "whitejacqueline@yahoo.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-16",
+    "diagnosis": "Heart failure exacerbation",
+    "summary": "Admitted with shortness of breath and leg swelling; diuresed and discharged on adjusted diuretics.",
+    "warning_signs": [
+      "chest pain",
+      "shortness of breath",
+      "weight gain over 2 kg in 2 days"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Furosemide",
+      "dose": "40 mg",
+      "frequency": "once daily",
+      "change": "changed"
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "10 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    },
+    {
+      "name": "Metoprolol succinate",
+      "dose": "25 mg",
+      "frequency": "once daily",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0064-A1",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-23",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-18",
+      "channel": "email",
+      "status": "responded",
+      "message": "Picked up the new prescription, thanks."
+    },
+    {
+      "date": "2026-09-20",
+      "channel": "email",
+      "status": "no_response",
+      "message": ""
+    },
+    {
+      "date": "2026-09-22",
+      "channel": "email",
+      "status": "no_response",
+      "message": ""
+    },
+    {
+      "date": "2026-09-24",
+      "channel": "email",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

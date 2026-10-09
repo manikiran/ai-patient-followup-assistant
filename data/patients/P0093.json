@@ -1,0 +1,80 @@
+{
+  "patient_id": "P0093",
+  "scenario": "non_responder",
+  "demographics": {
+    "name": "Melinda Evans",
+    "age": 60,
+    "gender": "non-binary",
+    "phone": "402-776-7735",
+    "email": "jessica56@gmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-18",
+    "diagnosis": "Laparoscopic appendectomy",
+    "summary": "Uncomplicated appendectomy; tolerating diet and pain controlled with oral analgesia.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "worsening abdominal pain",
+      "wound redness or discharge"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Paracetamol",
+      "dose": "1 g",
+      "frequency": "four times daily as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0093-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-09",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0093-A2",
+      "type": "Medication review",
+      "date": "2026-10-09",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0093-A3",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-17",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-20",
+      "channel": "email",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-09-22",
+      "channel": "email",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    },
+    {
+      "date": "2026-09-24",
+      "channel": "email",
+      "status": "no_response",
+      "message": ""
+    },
+    {
+      "date": "2026-09-26",
+      "channel": "email",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

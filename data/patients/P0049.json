@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0049",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Stacy Freeman",
+    "age": 57,
+    "gender": "female",
+    "phone": "+1-309-313-4316",
+    "email": "tjackson@gmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-21",
+    "diagnosis": "Total knee replacement",
+    "summary": "Elective right knee replacement; mobilising with a frame, wound clean and dry at discharge.",
+    "warning_signs": [
+      "wound redness or discharge",
+      "calf swelling",
+      "fever above 38.5 C"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Apixaban",
+      "dose": "2.5 mg",
+      "frequency": "twice daily for 14 days",
+      "change": "new"
+    },
+    {
+      "name": "Oxycodone",
+      "dose": "5 mg",
+      "frequency": "as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0049-A3",
+      "type": "Post-op wound check",
+      "date": "2026-10-17",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0049-A1",
+      "type": "Physical therapy session",
+      "date": "2026-10-20",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0049-A2",
+      "type": "Medication review",
+      "date": "2026-10-24",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-23",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    },
+    {
+      "date": "2026-09-25",
+      "channel": "phone",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

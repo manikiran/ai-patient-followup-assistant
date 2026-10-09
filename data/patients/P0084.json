@@ -1,0 +1,61 @@
+{
+  "patient_id": "P0084",
+  "scenario": "warning_symptom",
+  "demographics": {
+    "name": "Amber Rios",
+    "age": 63,
+    "gender": "male",
+    "phone": "615-366-7652x775",
+    "email": "mmiller@gmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-16",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0084-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-10",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0084-A2",
+      "type": "Medication review",
+      "date": "2026-10-11",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-18",
+      "channel": "phone",
+      "status": "responded",
+      "message": "I'll try to come, but I've had fever above 38.5 C since yesterday."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "patient_id": "P0096",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Kyle Cameron",
+    "age": 72,
+    "gender": "female",
+    "phone": "+1-274-580-1624x56506",
+    "email": "angela16@hotmail.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-28",
+    "diagnosis": "Laparoscopic appendectomy",
+    "summary": "Uncomplicated appendectomy; tolerating diet and pain controlled with oral analgesia.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "worsening abdominal pain",
+      "wound redness or discharge"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Paracetamol",
+      "dose": "1 g",
+      "frequency": "four times daily as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0096-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-20",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

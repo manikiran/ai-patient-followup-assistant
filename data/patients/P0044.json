@@ -1,0 +1,60 @@
+{
+  "patient_id": "P0044",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Peter Garrett",
+    "age": 86,
+    "gender": "male",
+    "phone": "001-603-248-2477x10932",
+    "email": "hdavis@yahoo.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-16",
+    "diagnosis": "Ischaemic stroke (minor)",
+    "summary": "Minor stroke with resolving left arm weakness; started on secondary prevention.",
+    "warning_signs": [
+      "new weakness or numbness",
+      "slurred speech",
+      "severe headache"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": "75 mg",
+      "frequency": "once daily",
+      "change": "new"
+    },
+    {
+      "name": "Atorvastatin",
+      "dose": "80 mg",
+      "frequency": "at night",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0044-A1",
+      "type": "Medication review",
+      "date": "2026-10-12",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-18",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Picked up the new prescription, thanks."
+    },
+    {
+      "date": "2026-09-20",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Feeling better, see you then."
+    }
+  ]
+}

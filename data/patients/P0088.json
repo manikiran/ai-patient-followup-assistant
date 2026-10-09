@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0088",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Yvonne Gonzalez",
+    "age": 54,
+    "gender": "male",
+    "phone": "(617)627-1551",
+    "email": "jenniferho@hotmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-26",
+    "diagnosis": "Total knee replacement",
+    "summary": "Elective right knee replacement; mobilising with a frame, wound clean and dry at discharge.",
+    "warning_signs": [
+      "wound redness or discharge",
+      "calf swelling",
+      "fever above 38.5 C"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Apixaban",
+      "dose": "2.5 mg",
+      "frequency": "twice daily for 14 days",
+      "change": "new"
+    },
+    {
+      "name": "Oxycodone",
+      "dose": "5 mg",
+      "frequency": "as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0088-A9",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-03",
+      "critical": false,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0088-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-24",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

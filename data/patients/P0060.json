@@ -1,0 +1,55 @@
+{
+  "patient_id": "P0060",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Brian Brown",
+    "age": 54,
+    "gender": "non-binary",
+    "phone": "958.291.7839x084",
+    "email": "lutzmelanie@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-16",
+    "diagnosis": "Laparoscopic appendectomy",
+    "summary": "Uncomplicated appendectomy; tolerating diet and pain controlled with oral analgesia.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "worsening abdominal pain",
+      "wound redness or discharge"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Paracetamol",
+      "dose": "1 g",
+      "frequency": "four times daily as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0060-A3",
+      "type": "Physical therapy session",
+      "date": "2026-10-07",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0060-A2",
+      "type": "Medication review",
+      "date": "2026-10-15",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0060-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-26",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

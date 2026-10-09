@@ -1,0 +1,68 @@
+{
+  "patient_id": "P0098",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Brittany Barry",
+    "age": 53,
+    "gender": "male",
+    "phone": "(759)952-6949",
+    "email": "thomas05@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-24",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0098-A9",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-03",
+      "critical": false,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0098-A1",
+      "type": "Medication review",
+      "date": "2026-10-18",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0098-A3",
+      "type": "Primary care visit",
+      "date": "2026-10-18",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0098-A2",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-24",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

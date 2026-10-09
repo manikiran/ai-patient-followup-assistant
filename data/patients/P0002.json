@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0002",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Meredith Barnes",
+    "age": 72,
+    "gender": "female",
+    "phone": "394.802.6542x351",
+    "email": "howardmaurice@yahoo.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-27",
+    "diagnosis": "Type 2 diabetes with hyperglycemia",
+    "summary": "Admitted with blood glucose above 400 mg/dL; insulin started and diabetes education provided.",
+    "warning_signs": [
+      "confusion",
+      "blood sugar above 300",
+      "fainting"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Insulin glargine",
+      "dose": "18 units",
+      "frequency": "at bedtime",
+      "change": "new"
+    },
+    {
+      "name": "Metformin",
+      "dose": "1000 mg",
+      "frequency": "twice daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0002-A2",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-13",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0002-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-26",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0017",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Deborah Freeman",
+    "age": 59,
+    "gender": "male",
+    "phone": "4169400524",
+    "email": "hhoffman@gmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-30",
+    "diagnosis": "COPD exacerbation",
+    "summary": "Treated with nebulisers and steroids; inhaler technique reviewed before discharge.",
+    "warning_signs": [
+      "shortness of breath",
+      "lips turning blue",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Prednisolone",
+      "dose": "30 mg",
+      "frequency": "once daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Tiotropium",
+      "dose": "18 mcg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0017-A2",
+      "type": "Primary care visit",
+      "date": "2026-10-10",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0017-A3",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-10",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0017-A1",
+      "type": "Physical therapy session",
+      "date": "2026-10-15",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-10-02",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Picked up the new prescription, thanks."
+    },
+    {
+      "date": "2026-10-04",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    }
+  ]
+}

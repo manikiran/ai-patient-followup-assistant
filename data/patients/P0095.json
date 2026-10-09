@@ -1,0 +1,61 @@
+{
+  "patient_id": "P0095",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Michelle Lee",
+    "age": 72,
+    "gender": "female",
+    "phone": "(878)977-4701",
+    "email": "jasongomez@gmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-20",
+    "diagnosis": "Acute kidney injury",
+    "summary": "Dehydration-related kidney injury, creatinine improving; nephrotoxic medicines paused.",
+    "warning_signs": [
+      "passing very little urine",
+      "swelling of legs",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Ibuprofen",
+      "dose": "400 mg",
+      "frequency": "as needed",
+      "change": "stopped"
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0095-A1",
+      "type": "Medication review",
+      "date": "2026-10-17",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0095-A2",
+      "type": "Primary care visit",
+      "date": "2026-10-20",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-22",
+      "channel": "email",
+      "status": "responded",
+      "message": "Feeling better, see you then."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "patient_id": "P0001",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Allison Hill",
+    "age": 58,
+    "gender": "non-binary",
+    "phone": "321.581.9600",
+    "email": "williamjohnson@gmail.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-27",
+    "diagnosis": "Heart failure exacerbation",
+    "summary": "Admitted with shortness of breath and leg swelling; diuresed and discharged on adjusted diuretics.",
+    "warning_signs": [
+      "chest pain",
+      "shortness of breath",
+      "weight gain over 2 kg in 2 days"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Furosemide",
+      "dose": "40 mg",
+      "frequency": "once daily",
+      "change": "changed"
+    },
+    {
+      "name": "Lisinopril",
+      "dose": "10 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    },
+    {
+      "name": "Metoprolol succinate",
+      "dose": "25 mg",
+      "frequency": "once daily",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0001-A9",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-03",
+      "critical": false,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0001-A3",
+      "type": "Primary care visit",
+      "date": "2026-10-12",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0001-A1",
+      "type": "Physical therapy session",
+      "date": "2026-10-16",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0001-A2",
+      "type": "Post-op wound check",
+      "date": "2026-10-20",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-29",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    }
+  ]
+}

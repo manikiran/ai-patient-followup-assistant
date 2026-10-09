@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0085",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Erica Miller",
+    "age": 37,
+    "gender": "male",
+    "phone": "+1-644-279-6275x70596",
+    "email": "lambertrichard@hotmail.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-27",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0085-A1",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-18",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0085-A3",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-20",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0085-A2",
+      "type": "Medication review",
+      "date": "2026-10-24",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-29",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-10-01",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    }
+  ]
+}

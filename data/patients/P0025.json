@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0025",
+  "scenario": "missed_critical",
+  "demographics": {
+    "name": "Janet Ross",
+    "age": 71,
+    "gender": "male",
+    "phone": "(501)363-2870",
+    "email": "danderson@hotmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-24",
+    "diagnosis": "Acute kidney injury",
+    "summary": "Dehydration-related kidney injury, creatinine improving; nephrotoxic medicines paused.",
+    "warning_signs": [
+      "passing very little urine",
+      "swelling of legs",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Ibuprofen",
+      "dose": "400 mg",
+      "frequency": "as needed",
+      "change": "stopped"
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0025-A9",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-03",
+      "critical": true,
+      "status": "missed"
+    },
+    {
+      "appointment_id": "P0025-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-20",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

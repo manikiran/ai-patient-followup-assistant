@@ -1,175 +1,140 @@
 # AI Patient Follow-Up Assistant
 
-**Problem:** Hospitals miss follow-up communication with discharged patients —
-reminders don't go out, at-risk patients fall through the cracks, and nobody
-escalates the ones who need a human to step in.
+Hospitals miss follow-up communication after discharge. That leads to skipped
+appointments, missed medication changes and avoidable readmissions. This app
+closes the gap with three agents that run in sequence for each patient:
 
-This project prototypes a fix: a small sequential multi-agent pipeline that
-turns a patient's discharge record into (1) a clinical follow-up summary,
-(2) a personalized reminder message, and (3) an escalation decision for the
-care team — with memory, so the pipeline recalls a patient's history across
-runs instead of treating every check-in as the first.
+1. **Patient Summary Agent** summarizes the patient's case, grounded in their
+   records through RAG.
+2. **Reminder Agent** writes a personalized reminder and picks the channel and
+   send time.
+3. **Escalation Agent** sets a risk flag (none / watch / escalate) and writes
+   a clinician alert.
 
-## Architecture
+Care staff run follow-ups, review results and handle alerts in a Streamlit
+dashboard. The app is deployed as one Docker container on AWS EC2, with data,
+memory and logs in S3. **All patient data is synthetic.**
 
-```
-                                              +--> Patient Summary Agent --(full?)--> Reminder Agent --(full?)--> Escalation Agent
-                                              |         (else END)                        (else END)
-Open WebUI --(OpenAI-compatible API)--> agent-app --> Router Agent
-                                              +--> Reminder Agent --> END
-                                              +--> Escalation Agent --> END
-                                                    |
-                                              (each node calls Claude)
-```
+**Costs:** the agents use **Claude** with your own Anthropic API key, the
+only paid component. Everything else is free: local MiniLM embeddings,
+open-source ChromaDB, and an AWS deployment that uses free-tier services only.
+For zero LLM cost too, switch `LLM_PROVIDER` to the free
+[Ollama](https://ollama.com) (local) or Gemini free tier.
 
-- **Synthetic data** (`src/synthetic_data.py`) — fabricates patient discharge
-  records (diagnosis, follow-up type/due date, risk level, missed
-  appointments, preferred contact method) since no real hospital data is used.
-- **Agents** (`src/agents.py`) — a LangGraph `StateGraph`, built directly on
-  the pattern in `ollama-FAPI/routerbasedagenticworkflowhealthcare.py`: a
-  router node that classifies the request with an LLM call, and conditional
-  edges that forward to the specialist node that handles it (also an LLM
-  call). The LLM is Claude (`src/llm.py`, official `anthropic` Python SDK,
-  model `claude-opus-5` by default) instead of that reference script's Gemini:
-  - **Router Agent** — the single entry point. Reads the user's free-form
-    query and asks Claude to classify it (summary / reminder / escalation /
-    unclear), then forwards to the one agent that handles it — callers just
-    ask a question, they don't need to know which agent does what. An
-    unclear/general request ("run followup for P0001") falls through to the
-    full sequential pipeline.
-  - **Patient Summary Agent** — reads the raw record, writes a concise
-    clinical follow-up summary.
-  - **Reminder Agent** — drafts a personalized reminder, matched to the
-    patient's preferred contact channel.
-  - **Escalation Agent** — decides whether risk level / missed appointments
-    warrant flagging the case to the care team.
-  - The graph is compiled with a `MemorySaver` checkpointer keyed by
-    `patient_id`, so state persists per patient across separate invocations —
-    e.g. ask for just a reminder later and the earlier summary is still on
-    record for that patient.
-  - Requires `ANTHROPIC_API_KEY` (see **Configuration** below). LLM failures
-    (rate limits, quota, network) are caught and surfaced as a readable
-    message instead of crashing the request.
-- **Backend** (`src/main.py`) — FastAPI service exposing:
-  - `GET /patients` — synthetic patient roster (auto-generated on first call)
-  - `POST /patients/generate` — regenerate the synthetic roster
-  - `POST /followup/run` — run the full agent pipeline for one `patient_id`
-  - `GET /v1/models`, `POST /v1/chat/completions` — an OpenAI-compatible
-    surface so Open WebUI can drive the pipeline directly from chat.
-- **Frontend** — [Open WebUI](https://github.com/open-webui/open-webui)
-  (`docker pull openwebui/open-webui`), configured to talk to the agent-app's
-  OpenAI-compatible endpoint. No custom frontend code — just wiring. Open
-  WebUI doesn't know or care that there's no LLM behind the "model" it's
-  talking to — the agent-app's `/v1/chat/completions` response is exactly
-  what it expects.
-- **Deployment** — Kubernetes manifests in `k8s/`, following the same
-  Deployment/Service/PVC pattern as `ollama-FAPI/k8s`, covering the agent-app
-  and Open WebUI. See `k8s/AWS_DEPLOY.md` for the EKS-specific steps (ECR
-  push, node sizing, LoadBalancer service for public access).
+See [docs/architecture.md](docs/architecture.md) for the design. The project
+plan and architecture one-pager (`.docx`) are the source specs.
 
 ## Repo layout
 
 ```
-.
-├── src/
-│   ├── synthetic_data.py   # synthetic patient generator
-│   ├── llm.py               # Claude client config (official anthropic SDK)
-│   ├── agents.py           # LangGraph router + agents + memory
-│   └── main.py             # FastAPI app (REST + OpenAI-compatible API)
-├── data/                   # generated synthetic_patients.json lands here
-├── k8s/                    # Deployment/Service/PVC manifests + AWS_DEPLOY.md
-├── Dockerfile              # agent-app image
-└── requirements.txt
+app.py                    Streamlit dashboard (Patients / Alerts / Simulate response)
+src/
+  config.py               settings from env / .env
+  synthetic_data.py       generates + validates synthetic patients
+  storage.py              S3 or local-folder JSON storage
+  rag.py                  LangChain loader, chunking, Chroma/FAISS index, patient-filtered retriever
+  llm.py                  Claude (default) / Ollama / Gemini: structured outputs, retries, fallbacks, cache
+  agents.py               the three agents + escalation rules + guardrails
+  memory.py               long-term memory per patient
+  workflow.py             sequential LangGraph pipeline
+schema/patient.schema.json
+data/patients/            100 generated patients (local mode)
+scripts/evaluate.py       end-to-end flag-accuracy test -> docs/test_report.md
+tests/                    offline pytest suite (no API key / AWS needed)
+deploy/ec2/               one-command free-tier EC2 deploy (deploy.sh / teardown.sh)
+docker-compose.yml        local stack (optional Ollama profile)
+Dockerfile                one image: app + agents + embedding model
+```
+
+## Quick start (local, no AWS)
+
+Requires Python 3.11–3.12 (ChromaDB doesn't support 3.14 yet).
+
+```bash
+python3.11 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env          # set ANTHROPIC_API_KEY (LLM_PROVIDER=anthropic is the default)
+
+python -m src.synthetic_data --count 100   # already committed; regenerates data/patients/
+python -m src.rag build                    # builds ./vectorstore (downloads an 80 MB embedding model once)
+streamlit run app.py                       # http://localhost:8501
+```
+
+Free LLM alternatives: install [Ollama](https://ollama.com), run
+`ollama pull llama3.2:3b` and set `LLM_PROVIDER=ollama`. Or get a free Gemini
+key at https://aistudio.google.com/apikey and set `LLM_PROVIDER=gemini` and
+`GOOGLE_API_KEY`.
+
+With `S3_BUCKET` empty, everything lives under `data/`. Patients are under
+`data/patients/` and are committed. Memory, logs and the index snapshot are
+generated at runtime and git-ignored.
+
+### Using the dashboard
+
+- **Patients**: select one or more patients and click **Run follow-ups**. Each
+  result shows the summary, the reminder and the escalation flag (with what the
+  rules alone decided).
+- **Alerts**: the latest *watch* and *escalate* flags, for clinician review.
+- **Simulate response**: record a fake reply ("no response", or a message like
+  "I've had chest pain"). Run that patient again and the flag changes. For
+  example, two no-responses in a row escalate.
+
+### Docker
+
+```bash
+docker compose up -d                       # app, LLM from .env (Claude)
+docker compose --profile ollama up -d      # + local Ollama (set LLM_PROVIDER=ollama)
 ```
 
 ## Configuration
 
-The agents call the Anthropic (Claude) API, so an API key is required:
+| Variable | Default | Purpose |
+|---|---|---|
+| `LLM_PROVIDER` | `anthropic` | `anthropic` (Claude, your key), `ollama` (local, free) or `gemini` (free tier) |
+| `ANTHROPIC_API_KEY` / `CLAUDE_MODEL` | — / `claude-opus-5` | Claude key and model |
+| `CLAUDE_FALLBACKS` | `default` | Server-side refusal fallback; `off` to disable |
+| `OLLAMA_MODEL` / `OLLAMA_BASE_URL` | `llama3.2:3b` / `http://localhost:11434` | Any Ollama model works, e.g. `qwen2.5:7b` if you have the RAM |
+| `GEMINI_MODEL` / `GOOGLE_API_KEY` | `gemini-2.5-flash` / — | Gemini free tier |
+| `LLM_CACHE` | `false` | Cache LLM responses on disk (cuts API cost and rate-limit hits while iterating) |
+| `S3_BUCKET` / `S3_PREFIX` / `AWS_REGION` | empty / `patient-followup` / `us-east-1` | S3 storage; empty bucket = local `data/` |
+| `VECTOR_STORE` | `chroma` | `chroma` or `faiss` (`pip install langchain-community faiss-cpu`) |
+| `RETRIEVER_K` | `8` | Chunks retrieved per patient |
+
+## Testing
 
 ```bash
-cp .env.example .env
-# then edit .env and set ANTHROPIC_API_KEY=sk-ant-...
+pytest -q                                       # offline: schema, rules, guardrail, retriever filter, end-to-end with a fake LLM
+python scripts/evaluate.py --count 20 --dry-run # rules-only flag accuracy, no API calls
+python scripts/evaluate.py --count 20           # full pipeline on 20 patients (real LLM calls)
 ```
 
-`CLAUDE_MODEL` in `.env` sets the *default* model (`claude-opus-5` if unset).
-**Never commit `.env`** — it's already git-ignored. On Kubernetes, the key is
-injected via a Secret instead (see `k8s/AWS_DEPLOY.md`).
+`evaluate.py` picks patients across every scenario (routine, single miss,
+non-responder, warning symptom, missed critical appointment). It compares each
+final flag with the expected one and writes `docs/test_report.md`.
 
-### Switching models dynamically (no restart)
-
-The model isn't hardcoded at startup — every agent call in `src/agents.py`
-reads `state["model"]` and passes it through to `src/llm.py`'s `ask()`,
-which resolves it per request (falling back to `CLAUDE_MODEL` if unset or
-not in `AVAILABLE_MODELS`). Two ways to use this:
-
-- **Open WebUI** — `GET /v1/models` advertises `claude-opus-5`,
-  `claude-sonnet-5`, and `claude-haiku-4-5`. Pick one from Open WebUI's model
-  dropdown and it's sent back as `model` on every `/v1/chat/completions`
-  request from then on — switching models is just switching the dropdown.
-- **REST API** — pass `"model": "claude-sonnet-5"` in the `/followup/run`
-  body.
-
-To add another model, add its id to `AVAILABLE_MODELS` in `src/llm.py` — no
-other code changes needed. Note memory doesn't carry the model choice
-forward: each call's `model` is independent, only the generated content
-(`summary`/`reminder`/`escalation`) persists across calls for a patient.
-
-## Running locally
-
-### The agent API
+## Deployment
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-
-uvicorn src.main:app --reload
+PYTHON=.venv/bin/python bash deploy/ec2/deploy.sh   # prints http://<ip>:8501
+bash deploy/ec2/teardown.sh                          # remove it again
 ```
 
-Generate synthetic data and try the pipeline:
+The script creates a private S3 bucket and stores the Claude key in SSM
+Parameter Store (free). It also creates an IAM role, a security group that
+opens 8501 to your IP only, and a free-tier t3.small that builds and runs the
+image. See [deploy/ec2/README.md](deploy/ec2/README.md), including the IAM
+permissions the deploying user needs.
 
-```bash
-python -m src.synthetic_data
-curl -X POST localhost:8000/followup/run -H 'Content-Type: application/json' \
-  -d '{"patient_id": "P0001"}'
-```
+## Guardrails and limitations
 
-### Open WebUI (frontend)
-
-```bash
-docker run -d --name open-webui \
-  -p 3000:8080 \
-  -e OPENAI_API_BASE_URL="http://host.docker.internal:8000/v1" \
-  -e OPENAI_API_KEY="not-needed" \
-  --add-host=host.docker.internal:host-gateway \
-  ghcr.io/open-webui/open-webui:main
-```
-
-Open http://localhost:3000, pick a model from the dropdown (`claude-opus-5`,
-`claude-sonnet-5`, or `claude-haiku-4-5` — see **Switching models
-dynamically** above), and try any of: `summary for P0001`,
-`send a reminder to P0002`, `does P0004 need escalation`, or
-`run followup for P0001` for the full pipeline.
-
-## Kubernetes / AWS
-
-```bash
-# local minikube smoke test, same as ollama-FAPI
-eval $(minikube docker-env) && docker build -t agent-app:latest .
-kubectl apply -f k8s/
-```
-
-For a real deployment to AWS EKS (ECR image push, node sizing, public access
-via LoadBalancer), see [`k8s/AWS_DEPLOY.md`](k8s/AWS_DEPLOY.md).
-
-## Notes / limitations
-
-- This is a learning/prototyping project: synthetic data only, no real PHI,
-  no auth on the API. Do not point this at real patient data as-is.
-- The escalation and reminder agents are advisory text generation, not a
-  substitute for clinical judgment — they explicitly avoid diagnosing or
-  prescribing.
-- Every router/agent call is a real, billed Anthropic API request on
-  `claude-opus-5` by default. A "full" pipeline run costs up to 4 calls
-  (router + 3 agents). Keep an eye on usage at console.anthropic.com if
-  you're generating followups in bulk, or set `CLAUDE_MODEL=claude-sonnet-5`
-  / `claude-haiku-4-5` in `.env` for a cheaper model.
+- Synthetic data only. Do not load real patient information. The dashboard has
+  no authentication, so restrict access with the security group.
+- Reminders avoid clinical advice: the prompt forbids it and a post-check
+  replaces any text that includes doses or medication instructions.
+  Escalations always go to a human clinician.
+- Each follow-up makes 3 LLM calls, billed to your Anthropic account on
+  `claude-opus-5`. For bulk runs, set `LLM_CACHE=true`, or a cheaper
+  `CLAUDE_MODEL` such as `claude-sonnet-5`.
+- The free alternatives cost nothing but are weaker (small local models) or
+  rate-limited (Gemini). The escalation rules are deterministic, so a weaker
+  model can't lower a flag.

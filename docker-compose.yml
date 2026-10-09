@@ -1,0 +1,21 @@
+# Local stack.
+#   docker compose up -d                      # app only, LLM from .env (Claude by default)
+#   docker compose --profile ollama up -d     # + free local Ollama server; set LLM_PROVIDER=ollama
+#   docker compose exec ollama ollama pull llama3.2:3b   # first Ollama run only
+#   open http://localhost:8501
+services:
+  app:
+    build: .
+    ports: ["8501:8501"]
+    env_file: .env
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434   # only used when LLM_PROVIDER=ollama
+    volumes:
+      - ./data:/app/data          # memory + logs survive restarts (local mode)
+  ollama:
+    image: ollama/ollama
+    profiles: ["ollama"]
+    volumes:
+      - ollama:/root/.ollama      # downloaded models
+volumes:
+  ollama:

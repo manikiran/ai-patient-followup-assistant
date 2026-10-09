@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0100",
+  "scenario": "warning_symptom",
+  "demographics": {
+    "name": "Jeremy Barnes",
+    "age": 45,
+    "gender": "male",
+    "phone": "(836)789-7028x38578",
+    "email": "stevepatel@hotmail.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-28",
+    "diagnosis": "Acute kidney injury",
+    "summary": "Dehydration-related kidney injury, creatinine improving; nephrotoxic medicines paused.",
+    "warning_signs": [
+      "passing very little urine",
+      "swelling of legs",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Ibuprofen",
+      "dose": "400 mg",
+      "frequency": "as needed",
+      "change": "stopped"
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0100-A2",
+      "type": "Primary care visit",
+      "date": "2026-10-13",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0100-A3",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-19",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0100-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-23",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-30",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    },
+    {
+      "date": "2026-10-02",
+      "channel": "sms",
+      "status": "responded",
+      "message": "I'll try to come, but I've had swelling of legs since yesterday."
+    }
+  ]
+}

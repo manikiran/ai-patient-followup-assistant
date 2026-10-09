@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0021",
+  "scenario": "warning_symptom",
+  "demographics": {
+    "name": "Victoria Johnson",
+    "age": 67,
+    "gender": "male",
+    "phone": "+1-265-856-9816x934",
+    "email": "meyerlindsay@hotmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-27",
+    "diagnosis": "Total knee replacement",
+    "summary": "Elective right knee replacement; mobilising with a frame, wound clean and dry at discharge.",
+    "warning_signs": [
+      "wound redness or discharge",
+      "calf swelling",
+      "fever above 38.5 C"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Apixaban",
+      "dose": "2.5 mg",
+      "frequency": "twice daily for 14 days",
+      "change": "new"
+    },
+    {
+      "name": "Oxycodone",
+      "dose": "5 mg",
+      "frequency": "as needed",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0021-A2",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-12",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0021-A3",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-12",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0021-A1",
+      "type": "Medication review",
+      "date": "2026-10-14",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-29",
+      "channel": "email",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    },
+    {
+      "date": "2026-10-01",
+      "channel": "email",
+      "status": "responded",
+      "message": "I'll try to come, but I've had wound redness or discharge since yesterday."
+    }
+  ]
+}

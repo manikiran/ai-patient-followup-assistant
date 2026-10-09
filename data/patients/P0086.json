@@ -1,0 +1,61 @@
+{
+  "patient_id": "P0086",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Meghan Cisneros",
+    "age": 72,
+    "gender": "non-binary",
+    "phone": "(897)202-1355",
+    "email": "erikarush@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-22",
+    "diagnosis": "Acute kidney injury",
+    "summary": "Dehydration-related kidney injury, creatinine improving; nephrotoxic medicines paused.",
+    "warning_signs": [
+      "passing very little urine",
+      "swelling of legs",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Ibuprofen",
+      "dose": "400 mg",
+      "frequency": "as needed",
+      "change": "stopped"
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0086-A2",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-14",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0086-A3",
+      "type": "Medication review",
+      "date": "2026-10-18",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0086-A1",
+      "type": "Physical therapy session",
+      "date": "2026-10-21",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

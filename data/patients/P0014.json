@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0014",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Tyler Miller",
+    "age": 35,
+    "gender": "male",
+    "phone": "(219)313-6193",
+    "email": "ksandoval@hotmail.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-25",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0014-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-10",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0014-A3",
+      "type": "Medication review",
+      "date": "2026-10-14",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0014-A2",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-25",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-27",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Picked up the new prescription, thanks."
+    },
+    {
+      "date": "2026-09-29",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Thanks, I'll be there."
+    }
+  ]
+}

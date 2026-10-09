@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Synthetic follow-up patient",
+  "description": "One fictional discharged patient. Synthetic data only -- never real patient information.",
+  "type": "object",
+  "required": ["patient_id", "scenario", "demographics", "discharge", "medications", "appointments", "responses"],
+  "additionalProperties": false,
+  "properties": {
+    "patient_id": {"type": "string", "pattern": "^P[0-9]{4}$"},
+    "scenario": {
+      "description": "Generator label used only to evaluate the Escalation Agent; never shown to the agents.",
+      "enum": ["routine", "single_miss", "non_responder", "warning_symptom", "missed_critical"]
+    },
+    "demographics": {
+      "type": "object",
+      "required": ["name", "age", "gender", "phone", "email", "preferred_channel", "language"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string"},
+        "age": {"type": "integer", "minimum": 18, "maximum": 100},
+        "gender": {"enum": ["female", "male", "non-binary"]},
+        "phone": {"type": "string"},
+        "email": {"type": "string"},
+        "preferred_channel": {"enum": ["sms", "email", "phone"]},
+        "language": {"type": "string"}
+      }
+    },
+    "discharge": {
+      "type": "object",
+      "required": ["date", "diagnosis", "summary", "warning_signs"],
+      "additionalProperties": false,
+      "properties": {
+        "date": {"type": "string", "format": "date"},
+        "diagnosis": {"type": "string"},
+        "summary": {"type": "string"},
+        "warning_signs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "dose", "frequency", "change"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {"type": "string"},
+          "dose": {"type": "string"},
+          "frequency": {"type": "string"},
+          "change": {"enum": ["new", "changed", "unchanged", "stopped"]}
+        }
+      }
+    },
+    "appointments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["appointment_id", "type", "date", "critical", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "appointment_id": {"type": "string"},
+          "type": {"type": "string"},
+          "date": {"type": "string", "format": "date"},
+          "critical": {"type": "boolean"},
+          "status": {"enum": ["scheduled", "completed", "missed"]}
+        }
+      }
+    },
+    "responses": {
+      "description": "Log of reminders already sent and how the patient responded, oldest first.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "channel", "status", "message"],
+        "additionalProperties": false,
+        "properties": {
+          "date": {"type": "string", "format": "date"},
+          "channel": {"enum": ["sms", "email", "phone"]},
+          "status": {"enum": ["responded", "no_response"]},
+          "message": {"type": "string"}
+        }
+      }
+    }
+  }
+}

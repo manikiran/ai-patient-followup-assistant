@@ -1,0 +1,61 @@
+{
+  "patient_id": "P0046",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Richard Adams",
+    "age": 68,
+    "gender": "male",
+    "phone": "9447997278",
+    "email": "andrea86@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-20",
+    "diagnosis": "Acute kidney injury",
+    "summary": "Dehydration-related kidney injury, creatinine improving; nephrotoxic medicines paused.",
+    "warning_signs": [
+      "passing very little urine",
+      "swelling of legs",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Ibuprofen",
+      "dose": "400 mg",
+      "frequency": "as needed",
+      "change": "stopped"
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0046-A2",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-13",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0046-A1",
+      "type": "Physical therapy session",
+      "date": "2026-10-22",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-22",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Feeling better, see you then."
+    }
+  ]
+}

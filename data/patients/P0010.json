@@ -1,0 +1,47 @@
+{
+  "patient_id": "P0010",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Crystal Whitehead",
+    "age": 31,
+    "gender": "non-binary",
+    "phone": "818-534-7382x99737",
+    "email": "davisryan@yahoo.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-16",
+    "diagnosis": "COPD exacerbation",
+    "summary": "Treated with nebulisers and steroids; inhaler technique reviewed before discharge.",
+    "warning_signs": [
+      "shortness of breath",
+      "lips turning blue",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Prednisolone",
+      "dose": "30 mg",
+      "frequency": "once daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Tiotropium",
+      "dose": "18 mcg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0010-A1",
+      "type": "Medication review",
+      "date": "2026-10-24",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": []
+}

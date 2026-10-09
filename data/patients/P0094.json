@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0094",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Kayla Rodriguez",
+    "age": 82,
+    "gender": "female",
+    "phone": "671.847.3210",
+    "email": "kwright@yahoo.com",
+    "preferred_channel": "phone",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-18",
+    "diagnosis": "Ischaemic stroke (minor)",
+    "summary": "Minor stroke with resolving left arm weakness; started on secondary prevention.",
+    "warning_signs": [
+      "new weakness or numbness",
+      "slurred speech",
+      "severe headache"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": "75 mg",
+      "frequency": "once daily",
+      "change": "new"
+    },
+    {
+      "name": "Atorvastatin",
+      "dose": "80 mg",
+      "frequency": "at night",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0094-A1",
+      "type": "Physical therapy session",
+      "date": "2026-10-10",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0094-A2",
+      "type": "Medication review",
+      "date": "2026-10-10",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0094-A3",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-24",
+      "critical": true,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-20",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-09-22",
+      "channel": "phone",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    }
+  ]
+}

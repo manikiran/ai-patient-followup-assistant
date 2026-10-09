@@ -1,0 +1,80 @@
+{
+  "patient_id": "P0015",
+  "scenario": "single_miss",
+  "demographics": {
+    "name": "Dean Santiago",
+    "age": 34,
+    "gender": "female",
+    "phone": "334-562-4751x07991",
+    "email": "david51@gmail.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-22",
+    "diagnosis": "Ischaemic stroke (minor)",
+    "summary": "Minor stroke with resolving left arm weakness; started on secondary prevention.",
+    "warning_signs": [
+      "new weakness or numbness",
+      "slurred speech",
+      "severe headache"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Aspirin",
+      "dose": "75 mg",
+      "frequency": "once daily",
+      "change": "new"
+    },
+    {
+      "name": "Atorvastatin",
+      "dose": "80 mg",
+      "frequency": "at night",
+      "change": "new"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0015-A3",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-11",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0015-A1",
+      "type": "Post-op wound check",
+      "date": "2026-10-15",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0015-A2",
+      "type": "Physical therapy session",
+      "date": "2026-10-19",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-24",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Feeling better, see you then."
+    },
+    {
+      "date": "2026-09-26",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    },
+    {
+      "date": "2026-09-28",
+      "channel": "sms",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

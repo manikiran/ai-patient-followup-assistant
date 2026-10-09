@@ -1,0 +1,74 @@
+{
+  "patient_id": "P0024",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Bradley Robertson",
+    "age": 90,
+    "gender": "female",
+    "phone": "+1-395-913-4332x0037",
+    "email": "kmercado@gmail.com",
+    "preferred_channel": "sms",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-22",
+    "diagnosis": "Community-acquired pneumonia",
+    "summary": "Treated with IV antibiotics, switched to oral therapy; oxygen weaned before discharge.",
+    "warning_signs": [
+      "fever above 38.5 C",
+      "shortness of breath",
+      "coughing blood"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Amoxicillin-clavulanate",
+      "dose": "875 mg",
+      "frequency": "twice daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Paracetamol",
+      "dose": "500 mg",
+      "frequency": "as needed",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0024-A3",
+      "type": "Specialist clinic visit",
+      "date": "2026-10-18",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0024-A2",
+      "type": "Primary care visit",
+      "date": "2026-10-20",
+      "critical": false,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0024-A1",
+      "type": "Physical therapy session",
+      "date": "2026-10-26",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-24",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Feeling better, see you then."
+    },
+    {
+      "date": "2026-09-26",
+      "channel": "sms",
+      "status": "responded",
+      "message": "Yes, my daughter will drive me."
+    }
+  ]
+}

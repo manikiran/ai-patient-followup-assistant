@@ -1,0 +1,79 @@
+{
+  "patient_id": "P0075",
+  "scenario": "non_responder",
+  "demographics": {
+    "name": "Angela Hansen",
+    "age": 35,
+    "gender": "non-binary",
+    "phone": "+1-752-981-6850x5423",
+    "email": "jeremytaylor@gmail.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-19",
+    "diagnosis": "COPD exacerbation",
+    "summary": "Treated with nebulisers and steroids; inhaler technique reviewed before discharge.",
+    "warning_signs": [
+      "shortness of breath",
+      "lips turning blue",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Prednisolone",
+      "dose": "30 mg",
+      "frequency": "once daily for 5 days",
+      "change": "new"
+    },
+    {
+      "name": "Tiotropium",
+      "dose": "18 mcg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0075-A2",
+      "type": "Post-op wound check",
+      "date": "2026-10-20",
+      "critical": true,
+      "status": "scheduled"
+    },
+    {
+      "appointment_id": "P0075-A1",
+      "type": "Lab test (bloodwork)",
+      "date": "2026-10-23",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-21",
+      "channel": "email",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-09-23",
+      "channel": "email",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    },
+    {
+      "date": "2026-09-25",
+      "channel": "email",
+      "status": "no_response",
+      "message": ""
+    },
+    {
+      "date": "2026-09-27",
+      "channel": "email",
+      "status": "no_response",
+      "message": ""
+    }
+  ]
+}

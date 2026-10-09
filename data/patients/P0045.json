@@ -1,0 +1,54 @@
+{
+  "patient_id": "P0045",
+  "scenario": "routine",
+  "demographics": {
+    "name": "Maria Moore",
+    "age": 84,
+    "gender": "non-binary",
+    "phone": "001-548-446-7737x826",
+    "email": "hillkristy@yahoo.com",
+    "preferred_channel": "email",
+    "language": "English"
+  },
+  "discharge": {
+    "date": "2026-09-22",
+    "diagnosis": "Acute kidney injury",
+    "summary": "Dehydration-related kidney injury, creatinine improving; nephrotoxic medicines paused.",
+    "warning_signs": [
+      "passing very little urine",
+      "swelling of legs",
+      "confusion"
+    ]
+  },
+  "medications": [
+    {
+      "name": "Ibuprofen",
+      "dose": "400 mg",
+      "frequency": "as needed",
+      "change": "stopped"
+    },
+    {
+      "name": "Amlodipine",
+      "dose": "5 mg",
+      "frequency": "once daily",
+      "change": "unchanged"
+    }
+  ],
+  "appointments": [
+    {
+      "appointment_id": "P0045-A1",
+      "type": "Primary care visit",
+      "date": "2026-10-15",
+      "critical": false,
+      "status": "scheduled"
+    }
+  ],
+  "responses": [
+    {
+      "date": "2026-09-24",
+      "channel": "email",
+      "status": "responded",
+      "message": "Got it, confirmed."
+    }
+  ]
+}
