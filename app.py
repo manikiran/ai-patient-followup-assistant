@@ -2,6 +2,7 @@
 
     streamlit run app.py
 
+* Ask       -- free-text questions, with or without a patient ID
 * Patients  -- patient list, run follow-ups, see summary / reminder / escalation
 * Alerts    -- latest watch/escalate flag per patient, for clinician review
 * Simulate  -- record a fake patient response to test escalation on the next run
@@ -12,6 +13,7 @@ import streamlit as st
 from src import config
 from src.llm import model_name
 from src.memory import list_memories, load_memory, record_response
+from src.qa import answer_question
 from src.rag import build_index, load_index
 from src.storage import get_storage, load_patients
 from src.workflow import build_workflow, run_followup
@@ -94,7 +96,66 @@ if not patients:
 
 by_id = {p["patient_id"]: p for p in patients}
 workflow = get_workflow(get_index())
-tab_patients, tab_alerts, tab_simulate = st.tabs(["Patients", "Alerts", "Simulate response"])
+tab_ask, tab_patients, tab_alerts, tab_simulate = st.tabs(["Ask", "Patients", "Alerts", "Simulate response"])
+
+# --- Ask -------------------------------------------------------------------------------
+
+EXAMPLES = [
+    "Give me the follow-up summary for P0007",
+    "What medications changed for P0012 and are there open tasks?",
+    "Does P0005 need escalation? Why?",
+    "Which patients need escalation right now?",
+    "Run the follow-up for P0003",
+]
+
+with tab_ask:
+    st.subheader("Ask about a patient")
+    st.caption("Include a patient ID (e.g. P0007) for a specific patient, or ask an open question "
+               "about all patients. Say \"run the follow-up for P0003\" to run the full agent pipeline.")
+    chat = st.session_state.setdefault("chat", [])
+
+    picked = None
+    cols = st.columns(len(EXAMPLES) + 1)
+    for col, example in zip(cols, EXAMPLES):
+        if col.button(example, key=f"ex-{example}", width="stretch"):
+            picked = example
+    if cols[-1].button("Clear chat", width="stretch"):
+        st.session_state["chat"] = chat = []
+
+    for turn in chat:
+        with st.chat_message(turn["role"]):
+            st.markdown(turn["content"])
+            if turn.get("followup"):
+                show_result(turn["followup"])
+            if turn.get("caption"):
+                st.caption(turn["caption"])
+
+    question = st.chat_input("Ask a question, e.g. 'summary for P0007' or 'which patients missed visits?'") or picked
+    if question:
+        with st.chat_message("user"):
+            st.markdown(question)
+        previous = next((t["patient_ids"] for t in reversed(chat) if t.get("patient_ids")), [])
+        with st.chat_message("assistant"), st.spinner("Looking through the records..."):
+            result = answer_question(
+                get_index(), question, by_id,
+                {m["patient_id"]: m for m in list_memories()},
+                history=[{"role": t["role"], "content": t["content"]} for t in chat],
+                previous_patient_ids=previous,
+            )
+            followup = None
+            if result["action"] == "run_followup":
+                followup = run_followup(workflow, result["patient_ids"][0])
+            st.markdown(result["answer"])
+            if followup:
+                show_result(followup)
+            caption = ("Sources: " + ", ".join(result["sources"])) if result["sources"] else ""
+            if result["error"]:
+                st.warning(f"LLM error: {result['error']}")
+            if caption:
+                st.caption(caption)
+        chat.append({"role": "user", "content": question})
+        chat.append({"role": "assistant", "content": result["answer"], "followup": followup,
+                     "caption": caption, "patient_ids": result["patient_ids"]})
 
 # --- Patients ----------------------------------------------------------------------
 

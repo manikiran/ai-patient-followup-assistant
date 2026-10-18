@@ -37,6 +37,7 @@ src/
   agents.py               the three agents + escalation rules + guardrails
   memory.py               long-term memory per patient
   workflow.py             sequential LangGraph pipeline
+  qa.py                   Ask tab: free-text questions answered from the records
 schema/patient.schema.json
 data/patients/            100 generated patients (local mode)
 scripts/evaluate.py       end-to-end flag-accuracy test -> docs/test_report.md
@@ -71,6 +72,12 @@ generated at runtime and git-ignored.
 
 ### Using the dashboard
 
+- **Ask**: chat with the assistant. Include a patient ID for that patient
+  ("summary for P0007", "what medications changed for P0012?", "does P0005 need
+  escalation?"), or ask an open question about all patients ("which patients
+  missed visits?"). Follow-up questions remember the last patient discussed.
+  "Run the follow-up for P0003" runs the full 3-agent pipeline. Answers come
+  only from the records, and every Q&A is logged.
 - **Patients**: select one or more patients and click **Run follow-ups**. Each
   result shows the summary, the reminder and the escalation flag (with what the
   rules alone decided).
